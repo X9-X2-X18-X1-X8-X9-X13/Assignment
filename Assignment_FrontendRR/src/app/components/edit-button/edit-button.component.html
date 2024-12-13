@@ -1,0 +1,58 @@
+
+<!-- Edit Button -->
+<button class="btn btn-primary" (click)="openEditModal()">
+  <i class="fas fa-pen"></i> Edit
+</button>
+
+<!-- Modal Structure -->
+<div class="modal" style="display: block;" *ngIf="showModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Book</h5>
+        <button class="btn-close" (click)="closeEditModal()"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="bookTitle" class="form-label">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="bookTitle"
+              [(ngModel)]="bookToEdit.title"
+              placeholder="Enter book title"
+              [ngModelOptions]="{standalone: true}"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="bookAuthor" class="form-label">Author</label>
+            <input
+              type="text"
+              class="form-control"
+              id="bookAuthor"
+              [(ngModel)]="bookToEdit.author"
+              placeholder="Enter author name"
+              [ngModelOptions]="{standalone: true}"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="bookDate" class="form-label">Publication Date</label>
+            <input
+              type="date"
+              class="form-control"
+              id="bookDate"
+              [(ngModel)]="bookToEdit.publicationDate"
+              [ngModelOptions]="{standalone: true}"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="closeEditModal()">Close</button>
+        <button class="btn btn-primary" (click)="submitEdit()">Save</button>
+      </div>
+    </div>
+  </div>
+</div> 
+

@@ -1,0 +1,79 @@
+.navbar-custom {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #8c0a06;
+    padding: 1rem 0.5rem;;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .nav-link {
+    margin-right: 1rem;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+
+  
+
+  /* styles for the theme slider */
+  .theme-toggle {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    margin-top: 0.5rem;
+  }
+  
+  .theme-toggle input {
+    display: none; /* Hide the checkbox */
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .slider:before {
+    content: "";
+    position: absolute;
+    height: 21px;
+    width: 21px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  /* When checked, move the ball */
+  input:checked + .slider {
+    background-color: #4caf50;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(25px);
+  }
+  :root {
+    --bg-color: white;
+    --text-color: black;
+  }
+  
+  .dark-mode {
+    --bg-color: black;
+    --text-color: white;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
